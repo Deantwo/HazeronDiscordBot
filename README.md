@@ -11,4 +11,5 @@ The bot can theoretically support multiple servers, so if/when proper hosting is
 
 # Links
 - [GitHub](https://github.com/Deantwo/HazeronDiscordBot)
+- [Hazeron Forum Thread](https://www.hazeron.com/mybb/showthread.php?tid=2763)
 - [Discord server](https://discord.gg/CPrpDzJ)
