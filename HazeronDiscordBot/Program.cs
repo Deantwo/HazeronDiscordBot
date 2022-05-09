@@ -156,8 +156,8 @@ namespace HazeronDiscordBot
                         // If all messages are new, there is a high possibility that there were messages lost since last checked.
                         if (galacticMessages.Count == 16 && galacticMessages.Count == unsentGalacticMessages.Count)
                         {
-                            Console.WriteLine($"=<>= Some galactic messages might have been lost between updates or downtime.");
-                            SendWebhookMessage(webhookClient, "||Temp*oral* st*ati*c*!* So*m*e *galac*t*i*c me*ss*ag*es* m*ight* *hav*e *b*e*en* l*os*t, and timestamps on following 16 messages might be wrong.||", "HazeronBot", HazeronPictures.Limbo, false);
+                            Console.WriteLine($"=<>= Server {server.ServerId} might have missed some galactic messages between updates or downtime.");
+                            SendWebhookMessage(webhookClient, $"||Ť͢ẻ̇̈ḿ̃pͯ͂̈oͫ̉̀ȓaͭͥ̀l̎̾ͯ ͥs̓̂͗t̐ͬ̍a̎t͌̓ͥi̵cͩͦ̌! Some galactic messages might have been *lost*, and timestamps on following 16 messages might be wrong.||", "HazeronBot", HazeronPictures.Limbo, false);
                         }
 
                         // Transmit all unsent messages to the Discord webhook.
