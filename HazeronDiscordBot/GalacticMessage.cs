@@ -32,7 +32,7 @@ namespace HazeronDiscordBot
                 // If the page wasn't updated since last read, just return nothing.
                 return messages;
             }
-            catch (InvalidOperationException)
+            catch (InvalidOperationException ex) when (ex.Message == "The operation was canceled.")
             {
                 // The stream is already in use by a previous call.
                 return messages;

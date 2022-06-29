@@ -216,6 +216,10 @@ namespace HazeronDiscordBot
                 // This is some HTTP stream error, ignore.
                 Console.WriteLine($"=<>= OperationCanceledException");
             }
+            catch (System.Net.WebException ex) when (ex.Message == "The SSL connection could not be established, see inner exception. The remote certificate is invalid according to the validation procedure.")
+            {
+                Console.WriteLine($"=<>= \"{_settings.Advanced.UrlGalactic}\"'s SSL certificate is invalid");
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"=<>= Unknown error message:{Environment.NewLine}{ex}");
@@ -290,7 +294,7 @@ namespace HazeronDiscordBot
 
 #if DEBUG
                 // For testing it is better to use Guild-level command, since they are updated right away.
-                ulong? testGuildId = StaticXmlSettings.Settings.Advanced.DeveloperTestServer;
+                ulong? testGuildId = _settings.Advanced.DeveloperTestServer;
                 if (testGuildId.HasValue)
                 {
                     Console.WriteLine($"=<>= In debug mode, registering commands to guild {testGuildId.Value}...");
